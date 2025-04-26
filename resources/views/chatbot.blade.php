@@ -877,7 +877,7 @@
                 var loadingWrapper = $('<div>', { class: 'bot-message-wrapper loading' });
 
                 var botImg = $('<img>', {
-                    src: '/storage/img/chatbot_icon.png',
+                    src: '{{ asset('storage/img/chatbot_icon.png') }}',
                     alt: 'Chatbot Icon',
                     class: 'avatar'
                 });
@@ -918,7 +918,7 @@
 
                         // Create the avatar
                         var botImg = $('<img>', {
-                            src: '/storage/img/chatbot_icon.png',
+                            src: '{{ asset('storage/img/chatbot_icon.png') }}',
                             alt: 'Chatbot Icon',
                             class: 'avatar'
                         });
