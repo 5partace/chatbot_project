@@ -21,6 +21,7 @@
             font-family: 'Open Sans', sans-serif;
         }
 
+        /* General Styles */
         header {
             padding: 20px 40px;
             display: flex;
@@ -28,6 +29,8 @@
             align-items: center;
             background-color: #001a4d;
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            overflow-x: auto; /* Allow horizontal scrolling */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
         }
 
         .logo {
@@ -36,12 +39,62 @@
             color: #C8102E;
         }
 
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
         nav a {
             color: white;
             margin-left: 20px;
             text-decoration: none;
             font-weight: 600;
         }
+
+        /* Mobile View (smaller than 768px) */
+        @media (max-width: 767px) {
+            header {
+                padding: 10px 20px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            nav a {
+                margin-left: 15px;
+                font-size: 14px;
+            }
+        }
+
+        /* Tablet View (768px to 1199px) */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            header {
+                padding: 15px 30px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            nav a {
+                margin-left: 20px;
+                font-size: 16px;
+            }
+        }
+
+        /* Desktop View (1200px and larger) */
+        @media (min-width: 1200px) {
+            .logo {
+                font-size: 24px;
+            }
+
+            nav a {
+                font-size: 16px;
+            }
+        }
+
 
         .hero {
             display: flex;
@@ -171,7 +224,6 @@
             position: absolute;
             bottom: 70px;
             right: 0;
-            min-width: 420px;
             max-height: 400px;
             background: #fff;
             color: black;
@@ -180,6 +232,19 @@
             display: none;
             flex-direction: column;
             transition: all 0.3s ease;
+        }
+
+        @media (max-width: 767px) {
+            #chat-box {
+                min-width:200;
+            }
+        }
+
+        /* For tablets and small laptops */
+        @media (min-width: 768px) {
+            #chat-box {
+                min-width: 420px;
+            }
         }
 
         #chat-box.show {
