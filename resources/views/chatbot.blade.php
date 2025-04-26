@@ -759,6 +759,12 @@
                         sendMessage();
                     }, 100);
                 }
+                else{
+                    if(canSendChatbotQuestion){
+                        chatInput.val(question);
+                        sendMessage();
+                    }
+                }
             })
 
             /*
