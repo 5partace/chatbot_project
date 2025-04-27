@@ -114,7 +114,7 @@
             display:flex;
             flex-direction: column;
             height:100vh;
-            background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.wallpaperflare.com%2Fstatic%2F863%2F706%2F520%2Fskyscrapers-night-buildings-architecture-wallpaper.jpg&f=1&nofb=1&ipt=8496a6465b323735faecb4d3c9fcadffdc36386259adf1ea8c286bc610afa48d') no-repeat center center/cover;
+            background: url('{{ asset('storage/img/skyscraper_skyline.jpg') }}') no-repeat center center/cover;
         }
 
         .splash-screen-container::before {
