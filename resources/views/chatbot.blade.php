@@ -21,16 +21,15 @@
             font-family: 'Open Sans', sans-serif;
         }
 
-        /* General Styles */
         header {
             padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #001a4d;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            overflow-x: auto; /* Allow horizontal scrolling */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            background-color: transparent;
+            box-shadow: none; /* Remove the shadow */
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .logo {
@@ -50,6 +49,22 @@
             margin-left: 20px;
             text-decoration: none;
             font-weight: 600;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        nav a::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #C8102E; /* red underline */
+            transition: width 0.3s;
+            margin-top: 5px;
+        }
+
+        nav a:hover::after {
+            width: 100%;
         }
 
         /* Mobile View (smaller than 768px) */
@@ -95,15 +110,37 @@
             }
         }
 
+        .splash-screen-container{
+            display:flex;
+            flex-direction: column;
+            height:100vh;
+            background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.wallpaperflare.com%2Fstatic%2F863%2F706%2F520%2Fskyscrapers-night-buildings-architecture-wallpaper.jpg&f=1&nofb=1&ipt=8496a6465b323735faecb4d3c9fcadffdc36386259adf1ea8c286bc610afa48d') no-repeat center center/cover;
+        }
+
+        .splash-screen-container::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+            z-index: 1;
+        }
+
+        .splash-screen-container > * {
+            position: relative;
+            z-index: 2;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* optional, makes text pop */
+        }
 
         .hero {
+            position: relative;
             display: flex;
+            flex-grow:1;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding: 100px 20px;
-            min-height: 100vh;
+            color: white;
         }
 
         .hero h1 {
@@ -525,20 +562,22 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">ST Engineering</div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Solutions</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+    <div class="splash-screen-container">
+        <header>
+            <div class="logo">ST Engineering</div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Solutions</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
 
-    <section class="hero">
-        <h1>Welcome to ST Engineering AI</h1>
-        <p>Chat with our AI assistant powered by Google's Gemini API. Secure, fast, and futuristic.</p>
-        <button id="get-started-btn">Get Started</button>
-    </section>
+        <section class="hero">
+            <h1>Welcome to ST Engineering AI</h1>
+            <p>Chat with our AI assistant powered by Google's Gemini API. Secure, fast, and futuristic.</p>
+            <button id="get-started-btn">Get Started</button>
+        </section>
+    </div>
 
     <!-- Digital Tech Section -->
     <section class="section digital-tech" id="digital-tech">
