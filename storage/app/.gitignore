@@ -1,3 +1,6 @@
-*
-!public/
-!.gitignore
+# Ignore everything in the public folder
+/public/*
+
+# But don't ignore the img folder and its contents
+!public/img/
+!public/img/**
